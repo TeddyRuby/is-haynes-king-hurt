@@ -4,39 +4,104 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Is Haynes King Hurt?</title>
-<link rel="stylesheet" href="styles.css" />
+<style>
+/* Reset & layout */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  background: #ffffff;   /* white background */
+  color: #000000;        /* black text */
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+}
+
+/* Container */
+.wrap {
+  text-align: center;
+}
+
+/* Title */
+.title {
+  margin: 0 0 1rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #000; /* black */
+}
+
+/* Status area */
+.status {
+  display: flex;
+  justify-content: center;
+}
+
+/* The smaller box */
+.status-box {
+  width: min(60vw, 320px);
+  min-height: clamp(80px, 12vw, 120px);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: #e5e7eb; /* neutral light gray before status */
+  border: 2px solid rgba(0,0,0,0.1);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  transition: background 180ms ease, color 180ms ease;
+}
+
+/* Label text inside the box */
+#status-label {
+  font-weight: 900;
+  font-size: clamp(1.25rem, 4vw, 2rem);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+/* Color variants */
+.status-box.yes {
+  background: #22c55e; /* green */
+  color: #ffffff;      /* white text on green */
+}
+.status-box.no {
+  background: #ef4444; /* red */
+  color: #ffffff;      /* white text on red */
+}
+.status-box.kinda {
+  background: #f59e0b; /* amber */
+  color: #000000;      /* black text on yellow */
+}
+</style>
 </head>
 <body>
 <main class="wrap" role="main">
-<h1 class="title">Is Haynes King Hurt?</h1>
-
-
-<section class="status">
-<div class="status-box">
-<span class="label" id="status-label"></span>
-</div>
-</section>
+  <h1 class="title">Is Haynes King Hurt?</h1>
+  <section class="status">
+    <div class="status-box">
+      <span id="status-label"></span>
+    </div>
+  </section>
 </main>
-
 
 <script>
 // Change this constant to 'yes', 'no', or 'kinda'
 const CURRENT_STATUS = 'kinda';
 
-
 const box = document.querySelector('.status-box');
 const label = document.getElementById('status-label');
 
-
 if (CURRENT_STATUS === 'yes') {
-box.classList.add('active', 'yes');
-label.textContent = 'Yes';
+  box.classList.add('yes');
+  label.textContent = 'Yes';
 } else if (CURRENT_STATUS === 'no') {
-box.classList.add('active', 'no');
-label.textContent = 'No';
+  box.classList.add('no');
+  label.textContent = 'No';
 } else if (CURRENT_STATUS === 'kinda') {
-box.classList.add('active', 'kinda');
-label.textContent = 'Kinda';
+  box.classList.add('kinda');
+  label.textContent = 'Kinda';
 }
 </script>
 </body>
