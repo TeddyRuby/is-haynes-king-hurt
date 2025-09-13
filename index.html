@@ -1,1 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Is Haynes King Hurt?</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<main class="wrap" role="main">
+<h1 class="title">Is Haynes King Hurt?</h1>
 
+
+<section class="status">
+<div class="status-box">
+<span class="label" id="status-label"></span>
+</div>
+</section>
+</main>
+
+
+<script>
+// Change this constant to 'yes', 'no', or 'kinda'
+const CURRENT_STATUS = 'kinda';
+
+
+const box = document.querySelector('.status-box');
+const label = document.getElementById('status-label');
+
+
+if (CURRENT_STATUS === 'yes') {
+box.classList.add('active', 'yes');
+label.textContent = 'Yes';
+} else if (CURRENT_STATUS === 'no') {
+box.classList.add('active', 'no');
+label.textContent = 'No';
+} else if (CURRENT_STATUS === 'kinda') {
+box.classList.add('active', 'kinda');
+label.textContent = 'Kinda';
+}
+</script>
+</body>
+</html>
