@@ -1,0 +1,86 @@
+/*
+color: var(--text);
+background: radial-gradient(1000px 600px at 50% -100px, #1a1f2b 0, #0c0f17 55%, #0b0c10 100%);
+}
+
+
+.wrap {
+min-height: 100dvh;
+max-width: 720px;
+margin: 0 auto;
+padding: 40px 20px 80px;
+display: grid;
+align-content: start;
+gap: 28px;
+}
+
+
+.title {
+margin: 0;
+font-size: clamp(28px, 4vw, 44px);
+line-height: 1.1;
+letter-spacing: -0.02em;
+text-align: center;
+text-shadow: 0 1px 0 rgba(0,0,0,.4);
+}
+
+
+.status {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 16px;
+}
+
+
+.status-box {
+position: relative;
+display: grid;
+place-items: center;
+height: 120px;
+border-radius: 18px;
+background: var(--panel);
+border: 1px solid var(--ring);
+box-shadow: var(--shadow);
+transition: transform .14s ease, box-shadow .14s ease, border-color .14s ease;
+user-select: none;
+}
+
+
+.status-box .label {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+font-weight: 700;
+font-size: clamp(18px, 2.5vw, 24px);
+text-transform: uppercase;
+letter-spacing: 0.06em;
+padding: 6px 12px;
+border-radius: 999px;
+background: rgba(255,255,255,.12);
+border: 1px solid rgba(255,255,255,.18);
+backdrop-filter: blur(4px);
+}
+
+
+/* Hover / focus affordances */
+.status-box:where(:hover, :focus-visible) {
+transform: translateY(-2px);
+border-color: #5c6474;
+box-shadow: 0 12px 36px rgba(0,0,0,.45), 0 4px 10px rgba(0,0,0,.28);
+}
+
+
+/* Active states paint the whole card and invert label for contrast */
+.status-box.active.yes { background: var(--yes-bg); border-color: transparent; }
+.status-box.active.no { background: var(--no-bg); border-color: transparent; }
+.status-box.active.kinda { background: var(--kinda-bg); border-color: transparent; }
+
+
+.status-box.active .label { background: rgba(0,0,0,.15); color: #0b0c10; border-color: rgba(0,0,0,.25); }
+
+
+/* Make the layout stack on very small screens */
+@media (max-width: 520px) {
+.status { grid-template-columns: 1fr; }
+.status-box { height: 96px; }
+}
