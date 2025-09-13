@@ -89,19 +89,18 @@ body {
 <script>
 // Change this constant to 'yes', 'no', or 'kinda'
 const CURRENT_STATUS = 'kinda';
+const CURRENT_LABEL = 'I mean he's not healthy'
 
 const box = document.querySelector('.status-box');
 const label = document.getElementById('status-label');
 
+label.textContent = CURRENT_LABEL;
 if (CURRENT_STATUS === 'yes') {
   box.classList.add('yes');
-  label.textContent = 'Yes';
 } else if (CURRENT_STATUS === 'no') {
   box.classList.add('no');
-  label.textContent = 'No';
 } else if (CURRENT_STATUS === 'kinda') {
   box.classList.add('kinda');
-  label.textContent = 'Kinda';
 }
 </script>
 </body>
